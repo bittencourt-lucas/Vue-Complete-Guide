@@ -9,10 +9,22 @@
 </head>
 <body>
     <div id="app">
+      <!-- v-once executes the initial state of the variable being interpolated -->
       <h1 v-once>{{ title }}</h1>
+
+      <!-- v-bind allows to use vue methods and data on attributes -->
+      <!-- It's also possible to parse functions when interpolating -->
       <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
       <hr />
+
+      <!-- v-html allows to render HTML code directly from the JS -->
       <p v-html="finishedLink"></p>
+      <hr />
+
+      <!-- v-on allows to use vue methods with events -->
+      <button v-on:click="increase">Click me</button>
+      <p>{{ counter }}</p>
+      <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
     </div>
     <script src="hello.js"></script>
 </body>
