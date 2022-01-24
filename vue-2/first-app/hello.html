@@ -22,9 +22,16 @@
       <hr />
 
       <!-- v-on allows to use vue methods with events -->
-      <button v-on:click="increase">Click me</button>
+      <!-- It's also possible to parse variables on the method -->
+      <button v-on:click="increase(2, $event)">Click me</button>
       <p>{{ counter }}</p>
-      <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+      <p v-on:mousemove="updateCoordinates">
+        Coordinates: {{ x }} / {{ y }}
+        <!-- It's possible to modify events through the . operator -->
+        - <span v-on:mousemove.stop="">DEAD ZONE</span>
+      </p>
+      <!-- It's also possible to chain modify events -->
+      <input type="text" v-on:keyup.enter.space="alertMe" />
     </div>
     <script src="hello.js"></script>
 </body>
