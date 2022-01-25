@@ -7,6 +7,14 @@ new Vue({
     counter: 0,
     x: 0,
     y: 0,
+    name: 'Wrex',
+    secondCounter: 0,
+  },
+  computed: {
+    output: function() {
+      console.log('Computed');
+      return this.counter < 5 ? 'Smaller than 5' : 'Greater than 5';
+    },
   },
   methods: {
     sayHello: function() {
@@ -19,6 +27,10 @@ new Vue({
     updateCoordinates: function(event) {
       this.x = event.clientX;
       this.y = event.clientY;
+    },
+    result: function() {
+      console.log('Method');
+      return this.counter < 5 ? 'Smaller than 5' : 'Greater than 5';
     },
     alertMe: () => alert("Alert!"),
   },

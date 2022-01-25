@@ -15,15 +15,19 @@
       <!-- v-bind allows to use vue methods and data on attributes -->
       <!-- It's also possible to parse functions when interpolating -->
       <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+
       <hr />
 
       <!-- v-html allows to render HTML code directly from the JS -->
       <p v-html="finishedLink"></p>
+
       <hr />
 
       <!-- v-on allows to use vue methods with events -->
       <!-- It's also possible to parse variables on the method -->
       <button v-on:click="increase(2, $event)">Click me</button>
+      <!-- It's possible to access everything in the JS part of the code -->
+      <button v-on:click="counter++">Click me</button>
       <p>{{ counter }}</p>
       <p v-on:mousemove="updateCoordinates">
         Coordinates: {{ x }} / {{ y }}
@@ -32,6 +36,24 @@
       </p>
       <!-- It's also possible to chain modify events -->
       <input type="text" v-on:keyup.enter.space="alertMe" />
+
+      <hr />
+      
+      <!-- Using v-model allows to bind the variable both ways -->
+      <input type="text" v-model="name" />
+      <p>{{ name }}</p>
+
+      <hr />
+
+      <button v-on:click="counter++">Increase</button>
+      <button v-on:click="counter--">Decrease</button>
+      <button v-on:click="secondCounter++">Increase Second</button>
+      <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+      <!-- Output is a computed variable, and it is only called when the variables within the
+      computed variable are changed -->
+      <p>Result: {{ result() }} | {{ output }}</p>
+
+      <hr />
     </div>
     <script src="hello.js"></script>
 </body>
