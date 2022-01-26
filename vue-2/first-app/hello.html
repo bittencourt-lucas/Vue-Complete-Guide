@@ -54,6 +54,13 @@
       <p>Result: {{ result() }} | {{ output }}</p>
 
       <hr />
+  
+      <!-- The shorthand notation for v-on (events) is using @ -->
+      <button @click="changeLink">Click To Change Link</button>
+      <!-- The shorthand notation for v-bind (attributes) is using : -->
+      <a :href="link">{{ link }}</a>
+
+      <hr />
     </div>
     <script src="hello.js"></script>
 </body>

@@ -12,8 +12,15 @@ new Vue({
   },
   computed: {
     output: function() {
-      console.log('Computed');
       return this.counter < 5 ? 'Smaller than 5' : 'Greater than 5';
+    },
+  },
+  watch: {
+    counter: function(value) {
+      var vm = this;
+      setTimeout(function() {
+        vm.counter = 0;
+      }, 2000);
     },
   },
   methods: {
@@ -29,8 +36,10 @@ new Vue({
       this.y = event.clientY;
     },
     result: function() {
-      console.log('Method');
       return this.counter < 5 ? 'Smaller than 5' : 'Greater than 5';
+    },
+    changeLink: function() {
+      this.link = 'https://www.apple.com/'
     },
     alertMe: () => alert("Alert!"),
   },
