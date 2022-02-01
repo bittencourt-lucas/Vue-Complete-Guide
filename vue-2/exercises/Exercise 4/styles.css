@@ -1,0 +1,51 @@
+#effect {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+.highlight {
+  background-color: red;
+  width: 200px !important;
+}
+
+.shrink {
+  background-color: gray;
+  width: 50px !important;
+}
+
+.bold-text {
+  font-size: larger;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.light-text {
+  font-size: smaller;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  color: green;
+}
+
+.magenta {
+  background-color: magenta;
+}
+
+.cyan {
+  background-color: cyan;
+}
+
+.yellow {
+  background-color: yellow;
+}
