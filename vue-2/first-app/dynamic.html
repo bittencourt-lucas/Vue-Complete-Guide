@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS Dynamic Styling</title>
+    <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="dynamic.css" />
+</head>
+<body>
+    <div id="app">
+        <div
+            class="demo"
+            @click="attachRed = !attachRed"
+            :class="{ red: attachRed }"></div>
+        <div
+            class="demo"
+            :class="divClasses"></div>
+        <div
+            class="demo"
+            :class="[color, {red: attachRed}]"
+            :style="[myStyle, {height: width + 'px'}]"></div>
+        <div
+            class="demo"
+            :style="myStyle"></div>
+        <hr />
+        <input type="text" v-model="color" />
+        <input type="text" v-model="width" />
+    </div>
+    <script src="dynamic.js"></script>
+</body>
+</html>
