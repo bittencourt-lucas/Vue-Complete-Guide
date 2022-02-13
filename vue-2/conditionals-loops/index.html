@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - The Complete Guide - Conditionals and Loops</title>
+    <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-if will dettach the element from the DOM -->
+        <p v-if="show">You can see me!</p>
+        <p v-else>Now you see me!</p>
+        <template v-if="show">
+            <h1>Heading</h1>
+            <p>Inside a template</p>
+        </template>
+        <!-- v-show will just set the element to display: none -->
+        <p v-show="show">Do you also see me?</p>
+        <button @click="show = !show">Switch</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
