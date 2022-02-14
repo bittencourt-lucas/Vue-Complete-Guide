@@ -19,6 +19,25 @@
         <!-- v-show will just set the element to display: none -->
         <p v-show="show">Do you also see me?</p>
         <button @click="show = !show">Switch</button>
+        
+        <!-- Using loops with v-for -->
+        <ul>
+            <li v-for="(ingredient, index) in ingredients" :key="ingredient + index">{{ ingredient }} ({{ index }})</li>
+        </ul>
+        <button @click="ingredients.push('spices')">Add new</button>
+        <template v-for="(ingredient, index) in ingredients">
+            <h1>{{ ingredient }}</h1>
+            <p>{{ index }}</p>
+        </template>
+        <hr />
+
+        <li v-for="person in people">
+            <div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+        </li>
+
+        <hr />
+
+        <span v-for="number in 10">{{ number }}</span>
     </div>
 
     <script src="script.js"></script>
